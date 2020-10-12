@@ -24,20 +24,6 @@ It is said that two squares in the maze are "accessible" if they are neighbors i
 wall. Note that it is forbidden to walk diagonally, but only in four directions (left, right, up, down, (of course)
 Only if there is no wall.
 
-For example, a maze can look like this:
-
-*	*	*	*	*	*	*	*	*	*	*
-*				*		*		*
-*		*	*	*		*		*		*
-*										*
-*	*	*	*	*		*	*	*		*
-*		*				*				*
-*		*		*		*	*	*		*
-*				*				*		*
-*		*		*	*	*		*	*	*
-*		*		*				      
-*	*	*	*	*	*	*	*	*	*	*
-
 # Maze Solution by Queue:
 
 Solving a maze means looking for the exit point when we start at the entry point. To ensure that we find the exit (if there is a route to it,) we must make sure that we go through all the possible squares in the maze. The turn will allow us to remember where we have already visited and decide which next square to visit.
@@ -62,18 +48,6 @@ Your output in the case of a maze solution will not only be the path leading to 
 All the squares you visited until you found the exit (the squares you visited were marked with a $ sign).
 For example in the maze in the example the algorithm will visit all the slots before reaching the exit, but this does not have to be the case
 And it is quite possible that the algorithm will stop before visiting all the slots (once it has reached the exit). The squares in which the algorithm visited the example were marked in gray, but as stated, you will mark in your solution the squares in which you visited $
-
-*	*	*	*	*	*	*	*	*	*	*
-				*		*		*   *
-*		*	*	*		*		*		*
-*										*
-*	*	*	*	*		*	*	*		*
-*		*				*				*
-*		*		*		*	*	*		*
-*				*				*		*
-*		*		*	*	*		*	*	*
-*		*		*						
-*	*	*	*	*	*	*	*	*	*	*
 
 Maze creation:
 
