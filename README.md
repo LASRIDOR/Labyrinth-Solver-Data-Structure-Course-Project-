@@ -1,1 +1,2 @@
-# Labyrinth-Solver-Data-Structure-Course-Project-
+# Labyrinth Solver
+
