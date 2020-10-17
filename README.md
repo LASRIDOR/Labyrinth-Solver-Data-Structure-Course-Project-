@@ -2,27 +2,20 @@
 
 # Description of the algorithms and purpose of the exercise:
 
+A C ++ program that performs two main purposes:
+1. Exit a given maze.
+2. Creation of a random maze.
+
 You will be asked to write a function that exits a maze using the queue and a function that creates a maze using the stack.
-A maze is simply a two-dimensional array of walls and free spaces, with or without any given free space a wall. Represents free space by space and wall by, * with the entire maze surrounded by walls, except for the corner of the entrance
-And the corner of the exit.
+A maze is simply a two-dimensional array of walls and free spaces, with or without any given free space a wall. We represent a free space by space and a wall by, * where the whole maze is surrounded by walls, except for the corner of the entrance and the corner of the exit.
 
 The beginning of the maze will be in the upper left corner and the exit of the maze will be in the lower right corner.
 
- 
-(0,0) and the slot
- 
-, (h, w) when the top left square is in place
- 
-The maze has of course height and width
- 
-The lower right is in place w-1) (h-1,
+The maze has of course height and width, (h, w) when the upper left square is in place (0,0) and the right lower square is in place (h-1, w-1).
 
-In a proper maze the bottom row, top row, left column and right column will always have walls
-Represented by asterisks, except for entering and exiting the maze.
+In a proper maze the bottom row, top row, left column and right column will always have walls represented by asterisks, except for entering and exiting the maze.
 
-It is said that two squares in the maze are "accessible" if they are neighbors in the maze and are in the same row or column, and there is no space between them
-wall. Note that it is forbidden to walk diagonally, but only in four directions (left, right, up, down, (of course)
-Only if there is no wall.
+It is said that two squares in the maze are "accessible" if they are neighbors in the maze and are in the same row or column, and there is no wall between them. Note that it is forbidden to walk diagonally, but only in four directions (left, right, up, down,) of course only if there is no wall.
 
 # Maze Solution by Queue:
 
@@ -35,19 +28,14 @@ We will use is:
 • If the current slot we downloaded is the end point then we will exit the loop because we left the maze.
 • Other: We will add to the queue all the squares that can be reached from the current square and which have not yet
 We visited them and will continue in the main loop.
-Note that the queue contains spaces of empty squares that contain spaces, and every time we remove a square from the queue we check the neighbors around that can be reached and then add them to the queue) if we had not already
-In them (to check them at a later stage.
+Note that the queue contains spaces of empty squares that contain spaces, and every time we remove a square from the queue we check the neighbors around that can be reached and then add them to the queue (if we have not been there yet) to check them later.
 
-Because the queue works in the form of FIFO then the search form will look like water spilling from the starting point) may
-Through the whole labyrinth, (until you reach the end point.
+Because the queue operates in the form of FIFO then the form of search will look like water spilling from the starting point (possibly through the whole maze), until you reach the end point.
 
-# To allow a uniform examination of your exercises be sure to visit neighbors in the following order: right, down,
+To allow a uniform examination of your exercises be sure to visit neighbors in the following order: right, down,
 Left, up.
 
-Your output in the case of a maze solution will not only be the path leading to the exit, but the entire maze where it is marked
-All the squares you visited until you found the exit (the squares you visited were marked with a $ sign).
-For example in the maze in the example the algorithm will visit all the slots before reaching the exit, but this does not have to be the case
-And it is quite possible that the algorithm will stop before visiting all the slots (once it has reached the exit). The squares in which the algorithm visited the example were marked in gray, but as stated, you will mark in your solution the squares in which you visited $
+Your output in the case of a maze solution will not only be the path leading to the exit, but the entire maze where all the squares you visited until you found the exit are marked (the squares you visited are marked with a $ sign). For example in the maze in the example the algorithm will visit all the slots before reaching the exit, but this does not have to be the case and it is quite possible that the algorithm will stop before visiting all the slots (as soon as it reaches the exit). The squares in which $, however, as mentioned, you will mark in your solution the and not in - marked in gray in the example of the algorithm visited by the squares in which you visited $.
 
 Maze creation:
 
@@ -62,12 +50,10 @@ Here is the maze creation algorithm:
 • If the current box we downloaded has neighbors we have not yet visited then:
 A. A random neighbor of the slot we have not yet visited was chosen.
 B. We will lower the wall between the selected neighbor and the current slot.
-third. We will return the current box to the stack.
+C. We will return the current box to the stack.
 D. We also put the random neighbor selected in the stack.
 • We will continue in the main loop.
 
-In fact, this algorithm will visit a maze like a snake crawling until it reaches a dead end) which is a slot without neighbors we have not yet visited, (then the snake goes back until it finds a slot that still has neighbors in it
-She did not visit and continues forward again.
+In fact, this algorithm will visit a maze like a snake crawling until it reaches a dead end (which is a slot without neighbors we have not yet visited), and then the snake goes back until it finds a slot that still has neighbors it has not visited and continues forward again.
 
-Try running the algorithm on the next initial maze that contains all the initial walls to figure out how
-The algorithm works.
+Try running the algorithm on the next initial maze that contains all the initial walls to understand how the algorithm works.
